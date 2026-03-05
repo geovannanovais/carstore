@@ -15,9 +15,9 @@ public class CreateCarServlet extends HttpServlet {
 
         String carName = request.getParameter("car-name");
 
-        System.out.println(carName);
+        response.setContentType("application/json");
 
-        request.getRequestDispatcher("index.html").forward(request, response);
+        response.getWriter().write("{\"carName\":\"" + carName + "\"}");
 
     }
 
